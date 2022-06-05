@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "../../public/logo-cabecera.png";
 import { NavBarContainer, NavBarList, NavBarItem } from "./navbar.style";
-const listNavBar = ["About us", "Products", "What we do", "contact"];
+const listNavBar = ["About us", "Products", "What we do", "Contact",];
 
 const Navbar = () => {
     return (
