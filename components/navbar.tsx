@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
 import logo from "../public/logo-cabecera.png";
-const NavbarContainer = styled.nav`
+const NavBarContainer = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,45 +15,38 @@ const NavbarContainer = styled.nav`
     left: 0;
     right: 0;
     height: 60px;
-    flex-direction: row-reverse;
+    flex-direction: inherit;
 `;
-const NavbarList = styled.ul`
+const NavBarList = styled.ul`
     display: flex;
     align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
 `;
-const NavbarItem = styled.li`
+const NavBarItem = styled.li`
     margin: 0 10px;
     font-size: 18px;
     font-weight: bold;
 `;
-const NavbarLogo = styled.img`
-    width: 100px;
-    height: auto;
-    float: left;
-`;
 
-const listNavBar = ["About us", "Products", "What we do", "Contact"];
+const listNavBar = ["About us", "Products", "What we do", "contact"];
 const Navbar = () => {
     return (
-        <NavbarContainer>
-            <NavbarList>
-                <NavbarItem>
-                    <Image src={logo} height={50} width={50} alt="logo" />
-                </NavbarItem>
+        <NavBarContainer>
+            <Image src={logo} height={50} width={50} alt="logo" />
+            <NavBarList>
                 {listNavBar.map((item, index) => {
                     return (
-                        <NavbarItem key={index}>
+                        <NavBarItem key={index}>
                             <Link href={`/${item.toLowerCase()}`}>
-                                <a>{item}</a>
+                                <a>{item.toLocaleUpperCase()}</a>
                             </Link>
-                        </NavbarItem>
+                        </NavBarItem>
                     );
                 })}
-            </NavbarList>
-        </NavbarContainer>
+            </NavBarList>
+        </NavBarContainer>
     );
 };
 export default Navbar;
