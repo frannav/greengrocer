@@ -12,7 +12,7 @@ export const NavBarContainer = styled.nav`
     top: 0;
     left: 0;
     right: 0;
-    height: 60px;
+    height: 7%;
     flex-direction: inherit;
 `;
 export const NavBarList = styled.ul`
